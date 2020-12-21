@@ -1,0 +1,108 @@
+2020-12-18 12:08:27,840 ERROR: Exception on /edit_profile [POST] [in /home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/radek/PycharmProjects/microblog/app/routes.py", line 107, in edit_profile
+    if form.validate_on_submit():
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/flask_wtf/form.py", line 100, in validate_on_submit
+    return self.is_submitted() and self.validate()
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/wtforms/form.py", line 318, in validate
+    return super(Form, self).validate(extra)
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/wtforms/form.py", line 150, in validate
+    if not field.validate(self, extra):
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/wtforms/fields/core.py", line 226, in validate
+    stop_validation = self._run_validation_chain(form, chain)
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/wtforms/fields/core.py", line 246, in _run_validation_chain
+    validator(form, self)
+  File "/home/radek/PycharmProjects/microblog/app/forms.py", line 47, in validate_username
+    if username.data != self.original_username:
+AttributeError: 'EditProfileForm' object has no attribute 'original_username'
+2020-12-18 12:09:47,973 INFO: Microblog startup [in /home/radek/PycharmProjects/microblog/app/__init__.py:51]
+2020-12-18 12:09:53,780 ERROR: Exception on /favicon.ico [GET] [in /home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/flask/app.py", line 1926, in dispatch_request
+    self.raise_routing_exception(req)
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/flask/app.py", line 1908, in raise_routing_exception
+    raise request.routing_exception
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/flask/ctx.py", line 350, in match_request
+    result = self.url_adapter.match(return_rule=True)
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/werkzeug/routing.py", line 1945, in match
+    raise NotFound()
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/flask/app.py", line 1816, in handle_user_exception
+    return self.handle_http_exception(e)
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/flask/app.py", line 1744, in handle_http_exception
+    return handler(e)
+  File "/home/radek/PycharmProjects/microblog/app/errors.py", line 9, in not_found_error
+    return render_template('404.html'), 404
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/flask/templating.py", line 137, in render_template
+    return _render(
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "/home/radek/PycharmProjects/microblog/app/templates/404.html", line 2, in top-level template code
+    {% extends "base.thml" %}
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/flask/templating.py", line 60, in get_source
+    return self._get_source_fast(environment, template)
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/flask/templating.py", line 89, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: base.thml
+2020-12-18 12:09:57,842 ERROR: Exception on /edit_profile [POST] [in /home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/radek/PycharmProjects/microblog/app/routes.py", line 107, in edit_profile
+    if form.validate_on_submit():
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/flask_wtf/form.py", line 100, in validate_on_submit
+    return self.is_submitted() and self.validate()
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/wtforms/form.py", line 318, in validate
+    return super(Form, self).validate(extra)
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/wtforms/form.py", line 150, in validate
+    if not field.validate(self, extra):
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/wtforms/fields/core.py", line 226, in validate
+    stop_validation = self._run_validation_chain(form, chain)
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/wtforms/fields/core.py", line 246, in _run_validation_chain
+    validator(form, self)
+  File "/home/radek/PycharmProjects/microblog/app/forms.py", line 47, in validate_username
+    if username.data != self.original_username:
+AttributeError: 'EditProfileForm' object has no attribute 'original_username'
+2020-12-18 12:11:44,647 INFO: Microblog startup [in /home/radek/PycharmProjects/microblog/app/__init__.py:51]
