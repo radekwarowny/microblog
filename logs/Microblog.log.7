@@ -1,0 +1,108 @@
+2020-12-22 10:22:19,148 ERROR: Exception on /login [GET] [in /home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/radek/PycharmProjects/microblog/app/routes.py", line 67, in login
+    return render_template('login.html', title='Sign In', form=form)
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/flask/templating.py", line 137, in render_template
+    return _render(
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "/home/radek/PycharmProjects/microblog/app/templates/login.html", line 1, in top-level template code
+    {% extends 'base.html' %}
+  File "/home/radek/PycharmProjects/microblog/app/templates/base.html", line 35, in top-level template code
+    {% block content %}{% endblock %}
+  File "/home/radek/PycharmProjects/microblog/app/templates/login.html", line 26, in block "content"
+    <a href="{{ url_for('reset_password_request' )}}">Click to Reset It</a>
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/flask/helpers.py", line 370, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/flask/app.py", line 2216, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/flask/helpers.py", line 357, in url_for
+    rv = url_adapter.build(
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/werkzeug/routing.py", line 2179, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'reset_password_request'. Did you mean 'reset_passowrd_request' instead?
+2020-12-22 10:30:00,391 INFO: Microblog startup [in /home/radek/PycharmProjects/microblog/app/__init__.py:53]
+2020-12-22 10:30:22,013 ERROR: Exception on /favicon.ico [GET] [in /home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/flask/app.py", line 1926, in dispatch_request
+    self.raise_routing_exception(req)
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/flask/app.py", line 1908, in raise_routing_exception
+    raise request.routing_exception
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/flask/ctx.py", line 350, in match_request
+    result = self.url_adapter.match(return_rule=True)
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/werkzeug/routing.py", line 1945, in match
+    raise NotFound()
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/flask/app.py", line 1816, in handle_user_exception
+    return self.handle_http_exception(e)
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/flask/app.py", line 1744, in handle_http_exception
+    return handler(e)
+  File "/home/radek/PycharmProjects/microblog/app/errors.py", line 9, in not_found_error
+    return render_template('404.html'), 404
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/flask/templating.py", line 137, in render_template
+    return _render(
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "/home/radek/PycharmProjects/microblog/app/templates/404.html", line 2, in top-level template code
+    {% extends "base.thml" %}
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/flask/templating.py", line 60, in get_source
+    return self._get_source_fast(environment, template)
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/flask/templating.py", line 89, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: base.thml
+2020-12-22 10:31:00,236 ERROR: Exception on /send_password_request [POST] [in /home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/radek/PycharmProjects/microblog/flask_venv/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/radek/PycharmProjects/microblog/app/routes.py", line 202, in reset_password_request
+    send_password_reset_email(user)
+  File "/home/radek/PycharmProjects/microblog/app/email.py", line 17, in send_password_reset_email
+    sender=app.config['ADMINS'][0],
+NameError: name 'app' is not defined
+2020-12-22 10:34:23,510 INFO: Microblog startup [in /home/radek/PycharmProjects/microblog/app/__init__.py:53]
